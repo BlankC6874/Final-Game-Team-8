@@ -1,9 +1,10 @@
 # Devlog Entry - [11/15/2024]
 ## Introducing the team
-1. Tools Lead: Qihe Wang (qwang122)
-2. Engine Lead: Brian Jin (amphy0)
-3. Assistant Engine Lead: Bolan Guan (chargeling)
-4. Creative Lead: Guangyang Chen (BlankC6874)
+1. Tools Lead: Qihe Wang (@qwang122)
+2. Assistant Tools Lead: Shaoan Wang (@shawn-sw)
+3. Engine Lead: Brian Jin (@amphy0)
+4. Assistant Engine Lead: Bolan Guan (@chargeling)
+5. Creative Lead: Guangyang Chen (@BlankC6874)
 
 ## Tools and materials
 1. We will be using Unity 2022.3.49f1. We chose Unity because of its familiarity with our Engine Lead, and since it can make a game in both 2D and 3D using Unity, we can be flexible with what we choose to create. On top of that, it has a robust asset store and extensive documentation, allowing us to access more resources and support. We can aim to create a more polished product using integrated systems like physics and animation.
