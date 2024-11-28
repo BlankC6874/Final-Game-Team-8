@@ -145,10 +145,10 @@ addEventListener("keydown", (e: KeyboardEvent) => {
     case "Enter":
       advanceTurn();
       break;
-    case "S":
+    case "s":
       sowPlant();
       break;
-    case "R":
+    case "r":
       reapPlant();
       break;
   }
