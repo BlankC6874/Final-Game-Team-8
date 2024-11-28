@@ -1,3 +1,7 @@
+# Devlog Entry - [11/28/2024]
+## How we satisfied the software requirements
+## Reflection
+Our plan changed from using Unity, our engine lead decided that unity would be unnecessary for a project like this after reading the software requirements, and decided that it would be much simpler if we just used typescript and html like we have been doing in class. We didn't really decide to take any really creative approach and decided to stick with a quite barebones design that works, it works as we expected it to and might add more to it later on.
 # Devlog Entry - [11/15/2024]
 ## Introducing the team
 1. Tools Lead: Qihe Wang (@qwang122)
