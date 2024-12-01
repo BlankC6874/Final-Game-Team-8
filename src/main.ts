@@ -72,7 +72,7 @@ function drawGrid() {
         ctx.fillText(
           `P${plantType} L${growthLevel}`,
           x * cellSize + 5,
-          y * cellSize + 50
+          y * cellSize + 50,
         );
       }
     }
@@ -90,7 +90,7 @@ function saveGame(slot: string) {
       player,
       actionHistory,
       redoStack,
-    })
+    }),
   );
   showMessage(`Game saved to slot: ${slot}`);
 }
@@ -105,7 +105,7 @@ function loadGame(slot: string) {
       redoStack: savedRedoStack,
     } = JSON.parse(saveData);
     savedGrid.forEach(
-      (value: number, index: number) => (gridState[index] = value)
+      (value: number, index: number) => (gridState[index] = value),
     );
     Object.assign(player, savedPlayer);
     actionHistory = savedActionHistory.map((state: GameState) => ({
@@ -132,7 +132,7 @@ function autoSave() {
       player,
       actionHistory,
       redoStack,
-    })
+    }),
   );
 }
 
@@ -146,7 +146,7 @@ function loadAutoSave() {
       redoStack: savedRedoStack,
     } = JSON.parse(autoSaveData);
     savedGrid.forEach(
-      (value: number, index: number) => (gridState[index] = value)
+      (value: number, index: number) => (gridState[index] = value),
     );
     Object.assign(player, savedPlayer);
     actionHistory = savedActionHistory.map((state: GameState) => ({
