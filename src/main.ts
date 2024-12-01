@@ -1,6 +1,11 @@
 const canvas = document.getElementById("gameCanvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
 
+const titleElement = document.createElement("h1");
+titleElement.textContent = "Farming Game";
+titleElement.style.textAlign = "center";
+document.body.insertBefore(titleElement, canvas);
+
 const gridSize = 8;
 const cellSize = 50;
 const grid: Cell[][] = [];
