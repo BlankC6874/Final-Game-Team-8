@@ -1,7 +1,13 @@
 const canvas = document.getElementById("gameCanvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
 
-const gridSize = 10; // Example grid size
+const titleElement = document.createElement("h1");
+titleElement.textContent = "Farming Game";
+titleElement.style.textAlign = "center";
+document.body.insertBefore(titleElement, canvas);
+
+const gridSize = 8;
+
 const cellSize = 50;
 
 // Grid state stored in a contiguous byte array (AoS format)
