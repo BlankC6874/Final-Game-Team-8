@@ -1,6 +1,19 @@
+# Devlog Entry - [12/02/2024]
+
+## How we satisfied the F1 software requirements
+
+1. [F1.a]: We used a Structure-of-Arrays (SoA) format to store the state of the game grid. Each grid cell property (e.g., sun level, water level, plant type, growth level) is stored as a separate contiguous array. This ensures efficient memory access patterns when updating or querying specific properties across all grid cells. Below is a diagram illustrating our memory allocation strategy: ![F1.a data structure diagram](./SoA_Grid_State.png)
+2. [F1.b]: We implemented a save/load system using JSON serialization for the game state. Players can manage multiple save slots, each represented by a unique file, allowing them to save progress and load it later. Press "1" to save the current game and "2" to load the save slot.
+3. [F3.c]: An auto-save is triggered automatically at the end of every turn, storing the game state in a dedicated auto-save file. When the game is launched, it checks for the presence of an auto-save file and prompts the player to continue from the last session.
+4. [F1.d]: We implemented an undo/redo system using a stack. Each turn's state is pushed onto the stack, allowing the player to undo actions. A separate stack tracks redo operations, letting players undo updos to revisit choices. Press "U" to undo and "D" to reoo.
+
+## Reflection
+
+These changes also influenced our UI design. We added indicators for save states and a history bar to visualize undo/redo actions. This evolution in design highlights our focus on player feedback and engagement.
+
 # Devlog Entry - [11/28/2024]
 
-## How we satisfied the software requirements
+## How we satisfied the F0 software requirements
 
 1. [F0.a]: Our game features a central character, the Farmer, who navigates a 2D
    grid representing farmland. Movement is implemented using keyboard input,
@@ -55,7 +68,7 @@ Our plan changed from using Unity. After reading the software requirements, our
 engine lead decided that Unity would be unnecessary for a project like this and
 much simpler if we used typescript and HTML like we have been doing in class. We
 took no creative approach and decided to stick with a barebones design that
-worked. It works as we expected, and we might add more to it later.
+worked. It works as expected, and we might add more later.
 
 # Devlog Entry - [11/15/2024]
 
@@ -70,7 +83,7 @@ worked. It works as we expected, and we might add more to it later.
 ## Tools and materials
 
 1. We will be using Unity 2022.3.49f1. We chose Unity because of its familiarity
-   with our Engine Lead, and since it can make a game in both 2D and 3D using
+   with our Engine Lead and since it can make a game in both 2D and 3D using
    Unity, we can be flexible with what we choose to create. On top of that, it
    has a robust asset store and extensive documentation, allowing us to access
    more resources and support. We can aim to create a more polished product
