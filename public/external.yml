@@ -1,0 +1,20 @@
+tutorial:
+  grid_size: [6, 6]
+  available_plants:
+    - flower
+  win_conditions:
+    - [flower, min, 10]
+  human_instructions: "grow 10 flowers"
+
+sunny:
+  grid_size: [10, 10]
+  available_plants:
+    - sunflower
+    - berry_bush
+  win_conditions:
+    - [sunflower, min, 20]
+    - [berry_bush, min, 10]
+  special_events:
+    - [2, drought]
+    - [7, heavy_rain]
+  human_instructions: "grow 20 sunflowers and 10 berry bushes"
