@@ -1,4 +1,4 @@
-import { parseYAML, GameDSL } from "./yamlParser";
+import { parseYAML, GameDSL } from "./yamlParser.ts";
 
 //load the dsl
 async function loadDSL(filePath: string): Promise<GameDSL> {
