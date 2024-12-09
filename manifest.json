@@ -1,13 +1,13 @@
 {
     "name": "Grid-based Farming Game",
     "short_name": "Farming Game",
-    "start_url": "/Final-Game-Team-8/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#242424",
     "theme_color": "#646cff",
     "icons": [
       {
-        "src": "/Final-Game-Team-8/SoA_Grid_State.png",
+        "src": "/SoA_Grid_State.png",
         "sizes": "144x144",
         "type": "image/png"
       }
