@@ -26,27 +26,34 @@ interface Translations {
 
 
   
-  function applyTranslations(): void {
+function applyTranslations(): void {
     const t = translations[currentLanguage];
-    if (!t) return; // Safeguard if translations for the selected language are missing
-  
+    if (!t) return;
+
     const infoElement = document.getElementById('info');
-    if (infoElement) {
-      infoElement.innerHTML = `
-        <strong style="grid-column: span 2">${t.operation_guide}</strong>
-        <div>${t.arrows}</div><div>${t.move_player}</div>
-        <div>${t.p_key}</div><div>${t.plant}</div>
-        <div>${t.h_key}</div><div>${t.harvest}</div>
-        <div>${t.t_key}</div><div>${t.advance_turn}</div>
-        <div>${t.u_key}</div><div>${t.undo}</div>
-        <div>${t.r_key}</div><div>${t.redo}</div>
-        <div>${t.s_key}</div><div>${t.save}</div>
-        <div>${t.l_key}</div><div>${t.load}</div>
-      `;
+    const body = document.body;
+
+    if (currentLanguage === 'ar') {
+        body.setAttribute('dir', 'rtl'); // Set right-to-left for Arabic
     } else {
-      console.error('Info element not found');
+        body.setAttribute('dir', 'ltr'); // Set left-to-right for other languages
     }
-  }
+
+    if (infoElement) {
+        infoElement.innerHTML = `
+            <strong style="grid-column: span 2">${t.operation_guide}</strong>
+            <div>${t.arrows}</div><div>${t.move_player}</div>
+            <div>${t.p_key}</div><div>${t.plant}</div>
+            <div>${t.h_key}</div><div>${t.harvest}</div>
+            <div>${t.t_key}</div><div>${t.advance_turn}</div>
+            <div>${t.u_key}</div><div>${t.undo}</div>
+            <div>${t.r_key}</div><div>${t.redo}</div>
+            <div>${t.s_key}</div><div>${t.save}</div>
+            <div>${t.l_key}</div><div>${t.load}</div>
+        `;
+    }
+}
+
   
   
   // Event listener for language change

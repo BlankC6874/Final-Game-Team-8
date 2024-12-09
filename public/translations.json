@@ -36,5 +36,44 @@
     "save": "Guardar",
     "l_key": "[L]",
     "load": "Cargar"
+  },
+  "zh": {
+    "operation_guide": "操作指南:",
+    "arrows": "[箭头键]",
+    "move_player": "移动玩家",
+    "p_key": "[P]",
+    "plant": "种植",
+    "h_key": "[H]",
+    "harvest": "收获",
+    "t_key": "[T]",
+    "advance_turn": "推进回合",
+    "u_key": "[U]",
+    "undo": "撤销",
+    "r_key": "[R]",
+    "redo": "重做",
+    "s_key": "[S]",
+    "save": "保存",
+    "l_key": "[L]",
+    "load": "加载"
+  },
+  "ar": {
+    "operation_guide": "دليل العمليات:",
+    "arrows": "[الأسهم]",
+    "move_player": "تحريك اللاعب",
+    "p_key": "[P]",
+    "plant": "زرع",
+    "h_key": "[H]",
+    "harvest": "حصاد",
+    "t_key": "[T]",
+    "advance_turn": "التقدم",
+    "u_key": "[U]",
+    "undo": "تراجع",
+    "r_key": "[R]",
+    "redo": "إعادة",
+    "s_key": "[S]",
+    "save": "حفظ",
+    "l_key": "[L]",
+    "load": "تحميل"
   }
 }
+
