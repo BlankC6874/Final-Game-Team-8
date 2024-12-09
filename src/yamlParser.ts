@@ -1,4 +1,4 @@
-import yaml from "js-yaml";
+import * as yaml from "npm:js-yaml";
 
 // Define the structure of your GameDSL type
 export type GameDSL = {

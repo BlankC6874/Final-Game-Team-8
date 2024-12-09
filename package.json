@@ -3,6 +3,7 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "eslint": "^9.16.0"
   }
 }
