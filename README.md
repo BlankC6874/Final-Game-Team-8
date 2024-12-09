@@ -1,3 +1,31 @@
+# Devlog Entry - [12/08/2024]
+
+## How we satisfied the software requirements
+
+### F0+F1+F2
+
+There is a change made that to reduce the amount of bugs that had on the game where more of the function will be working correctly for the game to play.
+
+### Internationalization
+
+So in order to change the strings in the program that it is shown we made it a language folder and storing all the words and giving them name for different language, and back to the code the string will be change to calling those things from the word folder for it to showing other different language beside to be hard coded and hard to change. The file in the main and index html get changed a lot in order to be capable of changing the language for the player to choose what localization they want for the game.
+
+### Localization
+
+This game supports English, Spanish, Chinese and Arabic. For each of the languages, we translate by someone who knows the translation and if we don't know, we use a translator to help us in this process. So for the translation tools that we input our original sentence into and make it out to another language. The player can choose the language on the head of the page. The game is one version that is capable of running three languages, it is not hard coded. There is an option for players to choose any language during any time playing meaning they can change in the middle of playing.
+
+### Mobile Installation
+
+The mobile installation is still in progress as we make it possible for our game to function 100% percent for the mobile. like by clicking the key in the PC we will change it to clicking it as there is no keyboard for most mobile devices.
+
+### Mobile Play (Offline)
+
+Our game for it to play well on mobile devices. Changes aren’t a lot needed to be made in the future as we want to implement it offline as this game is set to be played locally.
+
+## Reflection
+
+Our team plans to focus more on making the language model for this project the mobile is lining after it. And as working around that a lot of our roles change a lot to work on everything possible, Now we are thinking of gathering feedback from the player and feed them back base of the result. So we can learn from it.
+
 # Devlog Entry - [12/02/2024]
 
 ## How we satisfied the F1 software requirements
