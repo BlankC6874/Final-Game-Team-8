@@ -167,7 +167,7 @@ function handleScenarioChange(scenarioName: string, scenarioConfig: any) {
 // Initialize dropdown dynamically based on parsed DSL
 async function initializeScenarioDropdown() {
     try {
-        const dsl = await loadDSL("/project/external.yml");
+        const dsl = await loadDSL("/Final-Game-Team-8/public/external.yml");
         createDynamicScenarioDropdown(dsl);
     } catch (error) {
         console.error("Failed to initialize scenario dropdown:", error);
@@ -179,7 +179,7 @@ initializeScenarioDropdown();
 
 // Function to update game state based on selected scenario
 function loadScenario(scenario: string) {
-    loadDSL("/project/external.yml")
+    loadDSL("/Final-Game-Team-8/public/external.yml")
         .then((dsl) => {
             const scenarioData = dsl[scenario];
             if (!scenarioData) {
