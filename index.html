@@ -15,33 +15,27 @@
     </style>
   </head>
   <body>
+    <!-- Language Selector -->
+    <div id="languageSelector" style="margin: 10px; text-align: center;">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <!-- Add more languages as needed -->
+      </select>
+    </div>
+
     <div
       id="messagePanel"
       style="margin-top: 10px; color: #333; font-weight: bold"
-    >
-    </div>
+    ></div>
 
     <canvas id="gameCanvas" width="400" height="400"></canvas>
+
     <div id="info"
-         style="text-align: left; font-family: Inter, sans-serif; font-size: 16px; margin-top: 10px; margin-left: 650px; display: grid; grid-template-columns: 80px auto; gap: 5px">
-        <strong style="grid-column: span 2">Operation guide:</strong>
-        <div>[Arrows]</div>
-        <div>Move the player</div>
-        <div>[P]</div>
-        <div>Plant</div>
-        <div>[H]</div>
-        <div>Harvest</div>
-        <div>[T]</div>
-        <div>Advance Turn</div>
-        <div>[U]</div>
-        <div>Undo</div>
-        <div>[R]</div>
-        <div>Redo</div>
-        <div>[S]</div>
-        <div>Save</div>
-        <div>[L]</div>
-        <div>Load</div>
-    </div>
+      style="text-align: left; font-family: Inter, sans-serif; font-size: 16px; margin-top: 10px; margin-left: 650px; display: grid; grid-template-columns: 80px auto; gap: 5px"></div>
+      <!-- Translatable content will be dynamically inserted here -->
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

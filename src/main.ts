@@ -1,5 +1,76 @@
 import { parseYAML, GameDSL } from "./yamlParser.ts";
 
+interface Translations {
+    [language: string]: {
+      [key: string]: string;
+    };
+  }
+  
+  let translations: Translations = {};
+  let currentLanguage: keyof Translations = 'en';
+  
+  async function loadTranslations(): Promise<void> {
+    try {
+        const response = await fetch('./translations.json'); // Use a relative path
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        translations = await response.json();
+        console.log('Loaded translations:', translations);
+        applyTranslations();
+    } catch (error) {
+        console.error('Error loading translations:', error);
+    }
+}
+
+
+
+  
+  function applyTranslations(): void {
+    const t = translations[currentLanguage];
+    if (!t) return; // Safeguard if translations for the selected language are missing
+  
+    const infoElement = document.getElementById('info');
+    if (infoElement) {
+      infoElement.innerHTML = `
+        <strong style="grid-column: span 2">${t.operation_guide}</strong>
+        <div>${t.arrows}</div><div>${t.move_player}</div>
+        <div>${t.p_key}</div><div>${t.plant}</div>
+        <div>${t.h_key}</div><div>${t.harvest}</div>
+        <div>${t.t_key}</div><div>${t.advance_turn}</div>
+        <div>${t.u_key}</div><div>${t.undo}</div>
+        <div>${t.r_key}</div><div>${t.redo}</div>
+        <div>${t.s_key}</div><div>${t.save}</div>
+        <div>${t.l_key}</div><div>${t.load}</div>
+      `;
+    } else {
+      console.error('Info element not found');
+    }
+  }
+  
+  
+  // Event listener for language change
+  document.getElementById('language')?.addEventListener('change', (event) => {
+    const target = event.target as HTMLSelectElement;
+    currentLanguage = target.value as keyof Translations;
+    applyTranslations();
+  });  
+
+  console.log(`Current language: ${currentLanguage}`);
+  console.log('Translations:', translations[currentLanguage]);
+
+  loadTranslations().then(() => applyTranslations());
+
+
+  
+  // Initialize translations on page load
+  loadTranslations();
+  globalThis.onload = async () => {
+    await loadTranslations();
+};
+  
+
+
 //load the dsl
 async function loadDSL(filePath: string): Promise<GameDSL> {
     try {

@@ -1,0 +1,40 @@
+{
+  "en": {
+    "operation_guide": "Operation guide:",
+    "arrows": "[Arrows]",
+    "move_player": "Move the player",
+    "p_key": "[P]",
+    "plant": "Plant",
+    "h_key": "[H]",
+    "harvest": "Harvest",
+    "t_key": "[T]",
+    "advance_turn": "Advance Turn",
+    "u_key": "[U]",
+    "undo": "Undo",
+    "r_key": "[R]",
+    "redo": "Redo",
+    "s_key": "[S]",
+    "save": "Save",
+    "l_key": "[L]",
+    "load": "Load"
+  },
+  "es": {
+    "operation_guide": "Guía de operaciones:",
+    "arrows": "[Flechas]",
+    "move_player": "Mover al jugador",
+    "p_key": "[P]",
+    "plant": "Plantar",
+    "h_key": "[H]",
+    "harvest": "Cosechar",
+    "t_key": "[T]",
+    "advance_turn": "Avanzar turno",
+    "u_key": "[U]",
+    "undo": "Deshacer",
+    "r_key": "[R]",
+    "redo": "Rehacer",
+    "s_key": "[S]",
+    "save": "Guardar",
+    "l_key": "[L]",
+    "load": "Cargar"
+  }
+}
