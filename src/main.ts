@@ -97,7 +97,7 @@ const messagePanel = document.getElementById("messagePanel") as HTMLDivElement;
 
 let gridSize = 8; // Default grid size
 let availablePlants: string[] = [];
-let winConditions: [string, string, number][] = [];
+// let winConditions: [string, string, number][] = [];
 let gridState: Uint8Array; // Global gridState
 const player = { x: 0, y: 0, color: "red" }; // Player state
 let actionHistory: GameState[] = [];
@@ -108,10 +108,16 @@ type GameState = {
   player: { x: number; y: number };
 };
 
-let currentScenario = "tutorial";
+const currentScenario = "tutorial";
+
+type ScenarioConfig = {
+  grid_size: [number];
+  available_plants: string[];
+  win_conditions: [string, string, number][];
+};
 
 // Function to dynamically create scenario dropdown based on available scenarios
-function createDynamicScenarioDropdown(scenarios: Record<string, any>) {
+function createDynamicScenarioDropdown(scenarios: Record<string, ScenarioConfig>) {
   const scenarioSelect = document.createElement("select");
   scenarioSelect.id = "scenarioSelect"; // Add an ID for reference
 
@@ -143,7 +149,7 @@ function createDynamicScenarioDropdown(scenarios: Record<string, any>) {
 }
 
 // Handle scenario change
-function handleScenarioChange(scenarioName: string, scenarioConfig: any) {
+function handleScenarioChange(scenarioName: string, scenarioConfig: ScenarioConfig) {
   showMessage(`Scenario changed to: ${scenarioName}`);
   console.log(`Selected scenario: ${scenarioName}`, scenarioConfig);
 
@@ -191,7 +197,7 @@ function loadScenario(scenario: string) {
 
 // Create grid with updated size
 function createGrid() {
-  const cellSize = 50;
+  // const cellSize = 50;
   gridState = new Uint8Array(gridSize * gridSize * 4); // Create a new gridState with the updated gridSize
   for (let y = 0; y < gridSize; y++) {
     for (let x = 0; x < gridSize; x++) {
@@ -255,43 +261,43 @@ function loadGame(slot: string) {
 }
 
 // Auto-save functionality
-function autoSave() {
-  localStorage.setItem(
-    "autosave",
-    JSON.stringify({
-      gridState: Array.from(gridState),
-      player,
-      actionHistory,
-      redoStack,
-    }),
-  );
-}
+// function autoSave() {
+//   localStorage.setItem(
+//     "autosave",
+//     JSON.stringify({
+//       gridState: Array.from(gridState),
+//       player,
+//       actionHistory,
+//       redoStack,
+//     }),
+//   );
+// }
 
-function loadAutoSave() {
-  const autoSaveData = localStorage.getItem("autosave");
-  if (autoSaveData) {
-    const {
-      gridState: savedGrid,
-      player: savedPlayer,
-      actionHistory: savedActionHistory,
-      redoStack: savedRedoStack,
-    } = JSON.parse(autoSaveData);
-    savedGrid.forEach(
-      (value: number, index: number) => (gridState[index] = value),
-    );
-    Object.assign(player, savedPlayer);
-    actionHistory = savedActionHistory.map((state: GameState) => ({
-      gridState: Uint8Array.from(state.gridState),
-      player: { ...state.player },
-    }));
-    redoStack = savedRedoStack.map((state: GameState) => ({
-      gridState: Uint8Array.from(state.gridState),
-      player: { ...state.player },
-    }));
-    drawGrid();
-    showMessage("Auto-save loaded");
-  }
-}
+// function loadAutoSave() {
+//   const autoSaveData = localStorage.getItem("autosave");
+//   if (autoSaveData) {
+//     const {
+//       gridState: savedGrid,
+//       player: savedPlayer,
+//       actionHistory: savedActionHistory,
+//       redoStack: savedRedoStack,
+//     } = JSON.parse(autoSaveData);
+//     savedGrid.forEach(
+//       (value: number, index: number) => (gridState[index] = value),
+//     );
+//     Object.assign(player, savedPlayer);
+//     actionHistory = savedActionHistory.map((state: GameState) => ({
+//       gridState: Uint8Array.from(state.gridState),
+//       player: { ...state.player },
+//     }));
+//     redoStack = savedRedoStack.map((state: GameState) => ({
+//       gridState: Uint8Array.from(state.gridState),
+//       player: { ...state.player },
+//     }));
+//     drawGrid();
+//     showMessage("Auto-save loaded");
+//   }
+// }
 
 // Undo and redo functionality
 function saveStateToHistory() {
@@ -351,7 +357,7 @@ function advanceTurn() {
 
       // Plant growth
       const plantType = gridState[index + 2];
-      const growthLevel = gridState[index + 3];
+      // const growthLevel = gridState[index + 3];
 
       if (plantType > 0 && gridState[index] > 0 && gridState[index + 1] > 0) {
         gridState[index + 3]++; // Increment growth level
@@ -435,7 +441,7 @@ function drawGrid() {
 
 // Handle keyboard controls
 document.addEventListener("keydown", (event) => {
-  const cellSize = 50;
+  // const cellSize = 50;
   switch (event.key) {
     case "ArrowUp":
       if (player.y > 0) player.y--;
