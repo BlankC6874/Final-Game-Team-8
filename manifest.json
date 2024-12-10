@@ -1,13 +1,13 @@
 {
   "name": "Grid-based Farming Game",
   "short_name": "Farming Game",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#242424",
   "theme_color": "#646cff",
   "icons": [
     {
-      "src": "/ms-icon-144x144.png",
+      "src": "./ms-icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     }
