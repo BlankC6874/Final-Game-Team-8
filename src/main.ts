@@ -97,7 +97,7 @@ const messagePanel = document.getElementById("messagePanel") as HTMLDivElement;
 
 let gridSize = 8; // Default grid size
 let availablePlants: string[] = [];
-//let winConditions: [string, string, number][] = [];
+let _winConditions: [string, string, number][] = [];
 let gridState: Uint8Array; // Global gridState
 const player = { x: 0, y: 0, color: "red" }; // Player state
 let actionHistory: GameState[] = [];
@@ -110,8 +110,16 @@ type GameState = {
 
 const currentScenario = "tutorial";
 
+type ScenarioConfig = {
+  grid_size: [number, number];
+  available_plants: string[];
+  win_conditions: [string, string, number][];
+  special_events?: [number, string][];
+  human_instructions: string;
+};
+
 // Function to dynamically create scenario dropdown based on available scenarios
-function createDynamicScenarioDropdown(scenarios: Record<string, any>) {
+function createDynamicScenarioDropdown(scenarios: Record<string, ScenarioConfig>) {
   const scenarioSelect = document.createElement("select");
   scenarioSelect.id = "scenarioSelect"; // Add an ID for reference
 
@@ -143,7 +151,7 @@ function createDynamicScenarioDropdown(scenarios: Record<string, any>) {
 }
 
 // Handle scenario change
-function handleScenarioChange(scenarioName: string, scenarioConfig: any) {
+function handleScenarioChange(scenarioName: string, scenarioConfig: ScenarioConfig) {
   showMessage(`Scenario changed to: ${scenarioName}`);
   console.log(`Selected scenario: ${scenarioName}`, scenarioConfig);
 
@@ -179,7 +187,7 @@ function loadScenario(scenario: string) {
 
       gridSize = scenarioData.grid_size[0]; // Adjusting grid size based on scenario
       availablePlants = scenarioData.available_plants; // Available plants for this scenario
-      winConditions = scenarioData.win_conditions; // Win conditions for this scenario
+      _winConditions = scenarioData.win_conditions; // Win conditions for this scenario
       showMessage(`Scenario '${scenario}' loaded!`);
       createGrid(); // Recreate grid with the new size
       drawGrid(); // Redraw grid
