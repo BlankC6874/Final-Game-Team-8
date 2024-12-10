@@ -4,40 +4,77 @@
 
 ### F0+F1+F2
 
-There is a change made that to reduce the amount of bugs that had on the game where more of the function will be working correctly for the game to play.
+There is a change made that to reduce the amount of bugs that had on the game
+where more of the function will be working correctly for the game to play.
 
 ### Internationalization
 
-So in order to change the strings in the program that it is shown we made it a language folder and storing all the words and giving them name for different language, and back to the code the string will be change to calling those things from the word folder for it to showing other different language beside to be hard coded and hard to change. The file in the main and index html get changed a lot in order to be capable of changing the language for the player to choose what localization they want for the game.
+So in order to change the strings in the program that it is shown we made it a
+language folder and storing all the words and giving them name for different
+language, and back to the code the string will be change to calling those things
+from the word folder for it to showing other different language beside to be
+hard coded and hard to change. The file in the main and index html get changed a
+lot in order to be capable of changing the language for the player to choose
+what localization they want for the game.
 
 ### Localization
 
-This game supports English, Spanish, Chinese and Arabic. For each of the languages, we translate by someone who knows the translation and if we don't know, we use a translator to help us in this process. So for the translation tools that we input our original sentence into and make it out to another language. The player can choose the language on the head of the page. The game is one version that is capable of running three languages, it is not hard coded. There is an option for players to choose any language during any time playing meaning they can change in the middle of playing.
+This game supports English, Spanish, Chinese and Arabic. For each of the
+languages, we translate by someone who knows the translation and if we don't
+know, we use a translator to help us in this process. So for the translation
+tools that we input our original sentence into and make it out to another
+language. The player can choose the language on the head of the page. The game
+is one version that is capable of running three languages, it is not hard coded.
+There is an option for players to choose any language during any time playing
+meaning they can change in the middle of playing.
 
 ### Mobile Installation
 
-The mobile installation is still in progress as we make it possible for our game to function 100% percent for the mobile. like by clicking the key in the PC we will change it to clicking it as there is no keyboard for most mobile devices.
+The mobile installation is still in progress as we make it possible for our game
+to function 100% percent for the mobile. like by clicking the key in the PC we
+will change it to clicking it as there is no keyboard for most mobile devices.
 
 ### Mobile Play (Offline)
 
-Our game for it to play well on mobile devices. Changes aren’t a lot needed to be made in the future as we want to implement it offline as this game is set to be played locally.
+Our game for it to play well on mobile devices. Changes aren’t a lot needed to
+be made in the future as we want to implement it offline as this game is set to
+be played locally.
 
 ## Reflection
 
-Our team plans to focus more on making the language model for this project the mobile is lining after it. And as working around that a lot of our roles change a lot to work on everything possible, Now we are thinking of gathering feedback from the player and feed them back base of the result. So we can learn from it.
+Our team plans to focus more on making the language model for this project the
+mobile is lining after it. And as working around that a lot of our roles change
+a lot to work on everything possible, Now we are thinking of gathering feedback
+from the player and feed them back base of the result. So we can learn from it.
 
 # Devlog Entry - [12/02/2024]
 
 ## How we satisfied the F1 software requirements
 
-1. [F1.a]: We used a Structure-of-Arrays (SoA) format to store the state of the game grid. Each grid cell property (e.g., sun level, water level, plant type, growth level) is stored as a separate contiguous array. This ensures efficient memory access patterns when updating or querying specific properties across all grid cells. Below is a diagram illustrating our memory allocation strategy: ![F1.a data structure diagram](./SoA_Grid_State.png)
-2. [F1.b]: We implemented a save/load system using JSON serialization for the game state. Players can manage multiple save slots, each represented by a unique file, allowing them to save progress and load it later. Press "1" to save the current game and "2" to load the save slot.
-3. [F3.c]: An auto-save is triggered automatically at the end of every turn, storing the game state in a dedicated auto-save file. When the game is launched, it checks for the presence of an auto-save file and prompts the player to continue from the last session.
-4. [F1.d]: We implemented an undo/redo system using a stack. Each turn's state is pushed onto the stack, allowing the player to undo actions. A separate stack tracks redo operations, letting players undo updos to revisit choices. Press "U" to undo and "D" to reoo.
+1. [F1.a]: We used a Structure-of-Arrays (SoA) format to store the state of the
+   game grid. Each grid cell property (e.g., sun level, water level, plant type,
+   growth level) is stored as a separate contiguous array. This ensures
+   efficient memory access patterns when updating or querying specific
+   properties across all grid cells. Below is a diagram illustrating our memory
+   allocation strategy: ![F1.a data structure diagram](./SoA_Grid_State.png)
+2. [F1.b]: We implemented a save/load system using JSON serialization for the
+   game state. Players can manage multiple save slots, each represented by a
+   unique file, allowing them to save progress and load it later. Press "1" to
+   save the current game and "2" to load the save slot.
+3. [F3.c]: An auto-save is triggered automatically at the end of every turn,
+   storing the game state in a dedicated auto-save file. When the game is
+   launched, it checks for the presence of an auto-save file and prompts the
+   player to continue from the last session.
+4. [F1.d]: We implemented an undo/redo system using a stack. Each turn's state
+   is pushed onto the stack, allowing the player to undo actions. A separate
+   stack tracks redo operations, letting players undo updos to revisit choices.
+   Press "U" to undo and "D" to reoo.
 
 ## Reflection
 
-These changes also influenced our UI design. We added indicators for save states and a history bar to visualize undo/redo actions. This evolution in design highlights our focus on player feedback and engagement.
+These changes also influenced our UI design. We added indicators for save states
+and a history bar to visualize undo/redo actions. This evolution in design
+highlights our focus on player feedback and engagement.
 
 # Devlog Entry - [11/28/2024]
 

@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- Language Selector -->
-    <div id="languageSelector" style="margin: 10px; text-align: center;">
+    <div id="languageSelector" style="margin: 10px; text-align: center">
       <label for="language">Language:</label>
       <select id="language">
         <option value="en">English</option>
@@ -30,13 +30,17 @@
     <div
       id="messagePanel"
       style="margin-top: 10px; color: #333; font-weight: bold"
-    ></div>
+    >
+    </div>
 
     <canvas id="gameCanvas" width="400" height="400"></canvas>
 
-    <div id="info"
-      style="text-align: left; font-family: Inter, sans-serif; font-size: 16px; margin-top: 10px; margin-left: 650px; display: grid; grid-template-columns: 80px auto; gap: 5px"></div>
-      <!-- Translatable content will be dynamically inserted here -->
+    <div
+      id="info"
+      style="text-align: left; font-family: Inter, sans-serif; font-size: 16px; margin-top: 10px; margin-left: 650px; display: grid; grid-template-columns: 80px auto; gap: 5px"
+    >
+    </div>
+    <!-- Translatable content will be dynamically inserted here -->
 
     <script type="module" src="./src/main.ts"></script>
   </body>
