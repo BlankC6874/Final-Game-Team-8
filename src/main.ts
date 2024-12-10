@@ -119,7 +119,9 @@ type ScenarioConfig = {
 };
 
 // Function to dynamically create scenario dropdown based on available scenarios
-function createDynamicScenarioDropdown(scenarios: Record<string, ScenarioConfig>) {
+function createDynamicScenarioDropdown(
+  scenarios: Record<string, ScenarioConfig>,
+) {
   const scenarioSelect = document.createElement("select");
   scenarioSelect.id = "scenarioSelect"; // Add an ID for reference
 
@@ -151,7 +153,10 @@ function createDynamicScenarioDropdown(scenarios: Record<string, ScenarioConfig>
 }
 
 // Handle scenario change
-function handleScenarioChange(scenarioName: string, scenarioConfig: ScenarioConfig) {
+function handleScenarioChange(
+  scenarioName: string,
+  scenarioConfig: ScenarioConfig,
+) {
   showMessage(`Scenario changed to: ${scenarioName}`);
   console.log(`Selected scenario: ${scenarioName}`, scenarioConfig);
 
