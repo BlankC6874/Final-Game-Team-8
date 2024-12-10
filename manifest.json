@@ -7,7 +7,7 @@
   "theme_color": "#646cff",
   "icons": [
     {
-      "src": "/ms-icon-144x144.png",
+      "src": "ms-icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
     }
